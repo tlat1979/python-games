@@ -25,7 +25,7 @@ def getAllGames():
 
 
 def requestWorker(pageIndex):
-    url = "https://api.rawg.io/api/games?page=" + str(pageIndex)
+    url = "https://api.rawg.io/api/games?page_size=500&page=" + str(pageIndex)
     localGamesArr = []
     response = requests.request("GET", url)
     games = json.loads(response.text)['results']

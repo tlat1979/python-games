@@ -35,6 +35,12 @@
                 htmlbodyHeightUpdate()
             });
         });
+
+        function searchGames() {
+            val = $("#search-games").val();
+            console.log(val);
+            window.location.href = '/search?name=' + val;
+        };
     </script>
 </head>
 
@@ -101,6 +107,9 @@
     </nav>
     <div class="main">
         <div>Welcome to the Games DB</div>
+        <button onclick="window.location.href = '/games';">Get All Games</button>
+        <input type="text" placeholder="Search" id="search-games" />
+        <button onclick="searchGames()">Search</button>
     </div>
 
 </body>
