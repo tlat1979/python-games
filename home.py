@@ -1,2 +1,5 @@
+from flask import render_template
+
+
 def getHomePage():
-    return "Home Sweet Home"
+    return render_template('index.html', title='Home')

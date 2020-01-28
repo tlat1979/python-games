@@ -21,7 +21,7 @@ def getAllGames():
     def flatten(l): return [item for sublist in l for item in sublist]
     globalGamesArr = flatten(globalGamesArr)
     globalGamesArr.sort(key=lambda x: x.rating, reverse=True)
-    return render_template('index.html', title='Home', gamesArr=globalGamesArr)
+    return render_template('games.html', title='Home', gamesArr=globalGamesArr)
 
 
 def requestWorker(pageIndex):
