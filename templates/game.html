@@ -23,18 +23,15 @@
                 <th scope="col">Name</th>
                 <th scope="col">Release Date</th>
                 <th scope="col">Score</th>
-                <th scope="col">Screenshots</th>
             </tr>
         </thead>
         <tbody>
-            {% for game in gamesArr %}
             <tr>
                 <td>
                     <img class="game-icon" src="{{game.background_image}}" />
                 </td>
                 <td class="game-name">
-                    {% set url = url_for('games', id=game.id) %}
-                    <a href={{ url }}>{{game.name}}</a>
+                    <div>{{game.name}}</div>
                 </td>
                 <td class="game-name">
                     <div>{{game.released}}</div>
@@ -42,16 +39,7 @@
                 <td class="game-name">
                     <div>{{game.rating}} / 5</div>
                 </td>
-                <td>
-                    {% if game.short_screenshots[0] %}
-                    <img class="game-icon" src="{{game.short_screenshots[0].image}}" />
-                    {% endif %}
-                    {% if game.short_screenshots[1] %}
-                    <img class="game-icon" src="{{game.short_screenshots[1].image}}" />
-                    {% endif %}
-                </td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
 </body>

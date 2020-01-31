@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, request
 from games import getAllGames
 from home import getHomePage
 from search import searchGame
+from game import getOneGame
 
 
 app = Flask(__name__)
@@ -11,11 +12,16 @@ app = Flask(__name__)
 def index():
     return getHomePage()
 
-
 @app.route('/games')
-def games():
+def games(id = None):
+    if id is not None:
+        id = request.args.get('id')
+        return getOneGame(id)
     return getAllGames()
 
+@app.route('/games/<int:id>', strict_slashes=False)
+def oneGame(id):
+    return 
 
 @app.route('/search')
 def search():

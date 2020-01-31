@@ -8,9 +8,9 @@ import json
 
 def getAllGames():
     globalGamesArr = []
-    pool = ThreadPoolExecutor(10)
+    pool = ThreadPoolExecutor(5)
     futures = []
-    for x in range(1, 20):
+    for x in range(1, 3):
         futures.append(pool.submit(requestWorker, (x)))
 
     wait(futures, timeout=None, return_when=ALL_COMPLETED)
@@ -25,7 +25,7 @@ def getAllGames():
 
 
 def requestWorker(pageIndex):
-    url = "https://api.rawg.io/api/games?page_size=500&page=" + str(pageIndex)
+    url = "https://api.rawg.io/api/games?page_size=20&page=" + str(pageIndex)
     localGamesArr = []
     response = requests.request("GET", url)
     games = json.loads(response.text)['results']
