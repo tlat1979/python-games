@@ -13,9 +13,9 @@ def index():
     return getHomePage()
 
 @app.route('/games')
-def games(id = None):
+def games():
+    id = request.args.get('id')
     if id is not None:
-        id = request.args.get('id')
         return getOneGame(id)
     return getAllGames()
 

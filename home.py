@@ -2,4 +2,4 @@ from flask import render_template
 
 
 def getHomePage():
-    return render_template('index.html', title='Home')
+    return render_template('home.html', title='Home')
