@@ -3,14 +3,20 @@ from games import getAllGames
 from home import getHomePage
 from search import searchGame
 from game import getOneGame
-
+from login import getLoginPage
 
 app = Flask(__name__)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return getLoginPage()
 
 
 @app.route('/')
 def index():
     return getHomePage()
+
 
 @app.route('/games')
 def games():
@@ -19,9 +25,11 @@ def games():
         return getOneGame(id)
     return getAllGames()
 
+
 @app.route('/games/<int:id>', strict_slashes=False)
 def oneGame(id):
-    return 
+    return
+
 
 @app.route('/search')
 def search():
