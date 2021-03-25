@@ -49,7 +49,7 @@ pysmi==0.3.4
 pysnmp==4.4.6
 python-dateutil==2.8.0
 python-digitalocean==1.14.0
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 robobrowser==0.5.3
 rsa==3.4.2
